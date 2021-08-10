@@ -54,11 +54,9 @@ function App() {
       setConclusion("");
     }
   }
-
-
   useEffect(()=>{
     const fetchData = async()=>{
-      const res = await axios.get('/trades?market=usdtinr&limit=1');
+      const res = await axios.get('https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1');
       USDT = (+ res.data[0].price);
       //console.log(res.data[0].price);
       setData(+ res.data[0].price);
